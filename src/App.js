@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {NavBar} from './NavBar';
+import {Route, Switch, HashRouter } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@material-ui/core';
+import { yellow } from '@material-ui/core/colors';
+import HomePage from './Home';
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: yellow[800],
+    }
+  },
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme = {theme}>
+    <HashRouter>
+    <NavBar/>
+    <main >
+    <Switch>
+      <Route exact path = "/"> <HomePage /> </Route>
+      <Route exact path = "/Blogs"> <h1>Blogs</h1></Route>
+    </Switch>
+    </main>
+    </HashRouter>
+    </ThemeProvider>
   );
 }
 

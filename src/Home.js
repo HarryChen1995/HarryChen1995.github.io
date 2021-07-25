@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Box, Grid , Typography, Paper, Divider} from "@material-ui/core";
 import hero_bg from './assets/hero-bg.jpeg';
+import { Link } from "react-router-dom";
 import { yellow } from "@material-ui/core/colors";
 import SchoolIcon from '@material-ui/icons/School';
 import Accordion from '@material-ui/core/Accordion';
@@ -18,6 +19,123 @@ import ua from "./assets/ua.png"
 import osu from "./assets/osu.png"
 import { Avatar } from "@material-ui/core";
 import { Slide } from "@material-ui/core";
+import { Card, CardActionArea, CardActions, Button, CardMedia, CardContent,  } from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import HomeWorkIcon from '@material-ui/icons/HomeWork';
+import WorkIcon from '@material-ui/icons/Work';
+import EmailIcon from '@material-ui/icons/Email';
+function Skill(props){
+  const [value, setValue]  = useState(0)
+  useEffect(() => {
+    setValue(props.value)
+  })
+  return (
+    <div>
+    <div style = {{display:"flex", justifyContent:"space-between"}}>
+    <Typography color = "textSecondary"> {props.skill}</Typography>
+    <Typography> {props.value}% </Typography>
+    </div>
+    <LinearProgress variant="determinate" value={value} />
+    </div>
+  )
+}
+
+
+
+const cardUseStyles = makeStyles({
+  root: {
+    maxWidth: "100%",
+  },
+  media: {
+    height: 300,
+  },
+});
+
+ function MyCard() {
+  const classes = cardUseStyles();
+
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image= {hero_bg}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="h2" gutterBottom>
+            iOS & Web Developer
+          </Typography>
+          <Typography  align = "left" color = "textPrimary" gutterBottom>
+            Programming Languages
+          </Typography>
+          <Grid container spacing = {2}>
+            <Grid item xs = {6}><Skill skill = "Python" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "JavaScript" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "Dart" value = {50} /></Grid>
+            <Grid item xs = {6}><Skill skill = "Swift" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "C++" value = {70} /></Grid>
+            <Grid item xs = {6}><Skill skill = "C#" value = {90} /></Grid>
+          </Grid>
+          <Typography style = {{marginTop:10}} variant="h6" align = "left" color = "textPrimary" gutterBottom>
+            Libraries / Frameworks
+          </Typography>
+          <Grid container spacing = {2}>
+            <Grid item xs = {6}><Skill skill = "Tensorflow" value = {80} /></Grid>
+            <Grid item xs = {6}><Skill skill = "SwiftUI" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "Django" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "React" value = {100} /></Grid>
+            <Grid item xs = {6}><Skill skill = "Flutter" value = {50} /></Grid>
+            <Grid item xs = {6}><Skill skill = "UIkit" value = {60} /></Grid>
+          </Grid>
+          <Typography style = {{marginTop:10}} variant="h6" align = "left" color = "textPrimary" gutterBottom>
+            Cloud
+          </Typography>
+          <Grid container spacing = {2}>
+            <Grid item xs = {6}><Skill skill = "AWS" value = {80} /></Grid>
+            <Grid item xs = {6}><Skill skill = "Azure" value = {100} /></Grid>
+          </Grid>
+            <Grid style = {{marginTop:30}} container spacing = {2}>
+            <Grid item xs = {6}>
+           <div style = {{display:"flex", justifyContent:"flex-start"}}>
+            <PhoneIphoneIcon/>
+            <Typography>&nbsp; +13304073152</Typography>
+           </div>
+          </Grid>
+            <Grid item xs = {6}>
+            <div style = {{display:"flex", justifyContent:"flex-start"}}>
+            <HomeWorkIcon />
+            <Typography>&nbsp; Columbus Ohio</Typography>
+           </div>
+            </Grid>
+            <Grid item xs = {6}>
+           <div style = {{display:"flex", justifyContent:"flex-start"}}>
+            <EmailIcon/>
+            <Typography>&nbsp; harrychen1995@yahoo.com </Typography>
+           </div>
+          </Grid>
+            <Grid item xs = {6}>
+            <div style = {{display:"flex", justifyContent:"flex-start"}}>
+            <WorkIcon />
+            <Typography>&nbsp; InvoiceCloud - Full Time </Typography>
+           </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+      <a style={{ textDecoration: 'none' }} href="mailto:harrychen1995@yahoo.com"> <Button size="small" color="primary">Send Me Email</Button></a>
+      </CardActions>
+    </Card>
+  );
+}
+
+
+
+
+
+
 function Map(props){
     const position = props.coordinates
 
@@ -191,7 +309,7 @@ function HomePage() {
             </Slide>
             <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
             <Grid item align = "center" xs = {12} md = {6}>
-                <Box><img className = {classes.profile_image} src = {hero_bg} alt=""/></Box>
+                <MyCard />
             </Grid>
             </Slide>
             <Slide direction="right" in={checked} mountOnEnter unmountOnExit>

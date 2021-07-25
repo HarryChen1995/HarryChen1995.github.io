@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { makeStyles, Box, Grid , Typography, Paper, Divider} from "@material-ui/core";
 import hero_bg from './assets/hero-bg.jpeg';
 import { yellow } from "@material-ui/core/colors";
@@ -17,6 +17,7 @@ import GradeIcon from '@material-ui/icons/Grade';
 import ua from "./assets/ua.png"
 import osu from "./assets/osu.png"
 import { Avatar } from "@material-ui/core";
+import { Slide } from "@material-ui/core";
 function Map(props){
     const position = props.coordinates
 
@@ -153,11 +154,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 function HomePage() {
-
+    const [checked, setstate] = useState(false)
+    useEffect(() => {
+      setstate(true)
+    })
     const classes = useStyles();
     return (
         <div className = {classes.root}>
             <Grid container display = "flex" spacing = {3}>
+            <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Grid item container xs = {12} md = {6}>
                 <Grid item xs = {12}>
                 <Box>
@@ -183,9 +188,13 @@ function HomePage() {
                 </Grid>
                 </Grid>
             </Grid>
+            </Slide>
+            <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
             <Grid item align = "center" xs = {12} md = {6}>
                 <Box><img className = {classes.profile_image} src = {hero_bg} alt=""/></Box>
             </Grid>
+            </Slide>
+            <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Grid item xs = {12}>
             <Paper className = {classes.paper}  elevation = {3}>
             <Box>
@@ -198,6 +207,7 @@ function HomePage() {
                 </Box>
                 </Paper>
             </Grid>
+            </Slide>
             </Grid>
         </div>
     )

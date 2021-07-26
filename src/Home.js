@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Box, Grid , Typography, Paper, Divider} from "@material-ui/core";
 import hero_bg from './assets/hero-bg.jpeg';
-import { Link } from "react-router-dom";
 import { yellow } from "@material-ui/core/colors";
 import SchoolIcon from '@material-ui/icons/School';
 import Accordion from '@material-ui/core/Accordion';
@@ -19,7 +18,7 @@ import ua from "./assets/ua.png"
 import osu from "./assets/osu.png"
 import { Avatar } from "@material-ui/core";
 import { Slide } from "@material-ui/core";
-import { Card, CardActionArea, CardActions, Button, CardMedia, CardContent,  } from '@material-ui/core';
+import { Card,  CardActions, Button, CardMedia, CardContent,  } from '@material-ui/core';
 import { LinearProgress } from '@material-ui/core';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
@@ -57,7 +56,6 @@ const cardUseStyles = makeStyles({
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
         <CardMedia
           className={classes.media}
           image= {hero_bg}
@@ -123,7 +121,6 @@ const cardUseStyles = makeStyles({
             </Grid>
           </Grid>
         </CardContent>
-      </CardActionArea>
       <CardActions>
       <a style={{ textDecoration: 'none' }} href="mailto:harrychen1995@yahoo.com"> <Button size="small" color="primary">Send Me Email</Button></a>
       </CardActions>

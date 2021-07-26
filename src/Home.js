@@ -158,9 +158,7 @@ function Map(props){
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      padding:50,
-      marginLeft: "2%",
-      marginRight: "2%"
+      marginTop:50
     },
     profile_image:{
         maxWidth: "100%"
@@ -277,7 +275,7 @@ function HomePage() {
     return (
         <div className = {classes.root}>
             <Grid container justify="center" spacing = {3}>
-            <Grid container item xs = {12} md = {12} xl = {6} spacing = {5}>
+            <Grid container item xs = {12} md = {9} xl = {6} spacing = {5}>
             <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Grid item container xs = {12} md = {6}>
                 <Grid item xs = {12}>

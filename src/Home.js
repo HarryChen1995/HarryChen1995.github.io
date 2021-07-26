@@ -159,8 +159,8 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       padding:50,
-      marginLeft: "15%",
-      marginRight: "15%"
+      marginLeft: "2%",
+      marginRight: "2%"
     },
     profile_image:{
         maxWidth: "100%"

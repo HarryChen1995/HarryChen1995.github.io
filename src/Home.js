@@ -276,7 +276,8 @@ function HomePage() {
     const classes = useStyles();
     return (
         <div className = {classes.root}>
-            <Grid container display = "flex" spacing = {3}>
+            <Grid container justify="center" spacing = {3}>
+            <Grid container item xs = {12} md = {12} xl = {6} spacing = {5}>
             <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Grid item container xs = {12} md = {6}>
                 <Grid item xs = {12}>
@@ -323,6 +324,7 @@ function HomePage() {
                 </Paper>
             </Grid>
             </Slide>
+            </Grid>
             </Grid>
         </div>
     )

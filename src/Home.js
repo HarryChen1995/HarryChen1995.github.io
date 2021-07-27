@@ -275,7 +275,7 @@ function HomePage() {
     return (
         <div className = {classes.root}>
             <Grid container justify="center" spacing = {3}>
-            <Grid container item xs = {12} md = {9} xl = {6} spacing = {5}>
+            <Grid container item xs = {12} md = {10} xl = {6} spacing = {5}>
             <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
             <Grid item container xs = {12} md = {6}>
                 <Grid item xs = {12}>

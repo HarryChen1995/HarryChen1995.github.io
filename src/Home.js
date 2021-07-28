@@ -285,7 +285,7 @@ function HomePage() {
                     <Divider  style = {{ background: yellow[800], width: 150, height:5}}/>
                 </Typography>
                 <Typography color = "textSecondary" paragraph>
-                I am Hanlin Chen, a computer engineer graduate. I am currently looking for software engineer jobs. I have pushed myself beyond expectation to come as far as I have. Life has thrown me a lot of hurdles through my journey. I am passionate about AI (artificial intelligence), physics, math and software development. I enjoy challenging myself and want to help change the world with my ideas/accomplishments
+                I am Hanlin Chen, a computer engineer graduate. I have pushed myself beyond expectation to come as far as I have. Life has thrown me a lot of hurdles through my journey. I am passionate about AI (artificial intelligence), physics, math and software development. I enjoy challenging myself and want to help change the world with my ideas/accomplishments
                 </Typography>
                 </Box>
                 </Grid>

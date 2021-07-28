@@ -24,6 +24,8 @@ import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
 import WorkIcon from '@material-ui/icons/Work';
 import EmailIcon from '@material-ui/icons/Email';
+import { GitHub } from '@material-ui/icons';
+import { LinkedIn } from '@material-ui/icons';
 function Skill(props){
   const [value, setValue]  = useState(0)
   useEffect(() => {
@@ -59,12 +61,15 @@ const cardUseStyles = makeStyles({
         <CardMedia
           className={classes.media}
           image= {hero_bg}
-          title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2" gutterBottom>
             iOS & Web Developer
           </Typography>
+          <div style = {{display:"inline-flex"}}>
+          <a href = "https://github.com/HarryChen1995" style = {{textDecoration:"none", margin:10}}><GitHub style = {{color:"black", fontSize:30}}/></a>
+          <a href = "https://www.linkedin.com/in/hanlin-chen-41663b139/" style = {{textDecoration:"none", margin:10}}><LinkedIn style = {{color:"black", fontSize:33}}/></a>
+         </div>
           <Typography  align = "left" color = "textPrimary" gutterBottom>
             Programming Languages
           </Typography>

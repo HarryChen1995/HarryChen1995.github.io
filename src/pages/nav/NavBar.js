@@ -8,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import BookIcon from '@material-ui/icons/Book';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import {ListItem } from '@material-ui/core';
+import {MenuItem} from '@material-ui/core';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Avatar } from '@material-ui/core';
-import me from './assets/me.jpeg';
+import me from '../../assets/me.jpeg';
 const useStyles = makeStyles((theme)=>({
   root: { flexGrow:1},
   menuButton: {
@@ -39,14 +39,15 @@ function NavBar() {
     "Profile": <AccountCircleIcon />,
     "Blogs": <BookIcon />
   }
+  const [selected, setSelect] = useState(0)
   const list = () => (
     <div className = {classes.list}>
       <List>
         {['Profile', 'Blogs'].map((text, index) => (
-          <ListItem button  onClick = {()=> toggleDrawer(false)} key={text} component = {Link} to = { index === 0 ? "/": "/" + text}>
+          <MenuItem button  onClick = {()=> {toggleDrawer(false); setSelect(index)}} key={text} component = {Link} to = { index === 0 ? "/": "/" + text} selected = {selected === index}>
             <ListItemIcon>{iconMap[text]}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+            <ListItemText primary={<Typography style = {{fontWeight:"bold"}}>{text}</Typography>} />
+          </MenuItem>
         ))}
       </List>
     </div>
@@ -70,4 +71,4 @@ function NavBar() {
   );
 }
 
-export {NavBar}
+export default NavBar

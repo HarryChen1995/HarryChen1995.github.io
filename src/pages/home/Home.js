@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Box, Grid , Typography, Paper, Divider} from "@material-ui/core";
-import hero_bg from './assets/hero-bg.jpeg';
+import hero_bg from '../../assets/hero-bg.jpeg';
 import { yellow } from "@material-ui/core/colors";
 import SchoolIcon from '@material-ui/icons/School';
 import Accordion from '@material-ui/core/Accordion';
@@ -14,8 +14,8 @@ import 'leaflet/dist/leaflet.css';
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
 import GradeIcon from '@material-ui/icons/Grade';
-import ua from "./assets/ua.png"
-import osu from "./assets/osu.png"
+import ua from "../../assets/ua.png"
+import osu from "../../assets/osu.png"
 import { Avatar } from "@material-ui/core";
 import { Slide } from "@material-ui/core";
 import { Card,  CardActions, Button, CardMedia, CardContent,  } from '@material-ui/core';

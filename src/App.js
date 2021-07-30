@@ -1,9 +1,9 @@
 import React from 'react';
-import {NavBar} from './NavBar';
 import {Route, Switch, HashRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
-import HomePage from './Home';
+import HomePage from './pages/home/Home';
+import NavBar from './pages/nav/NavBar';
 const theme = createTheme({
   palette: {
     primary: {

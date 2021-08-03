@@ -16,6 +16,8 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Avatar } from '@material-ui/core';
 import me from '../../assets/me.jpeg';
+import { yellow } from '@material-ui/core/colors';
+const themeColor = yellow[800]
 const useStyles = makeStyles((theme)=>({
   root: { flexGrow:1},
   menuButton: {
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme)=>({
     },  
   },
   list: {
-    width: 250,
+    width: 200,
   },
   appbar: {
     color:"white"
@@ -35,18 +37,18 @@ const useStyles = makeStyles((theme)=>({
 
 function NavBar() {
   const classes = useStyles();
-  const iconMap = {
-    "Profile": <AccountCircleIcon />,
-    "Blogs": <BookIcon />
-  }
   const [selected, setSelect] = useState(0)
+  const iconMap = {
+    "Profile": <AccountCircleIcon style = {{fill: selected === 0 ? themeColor : "gray"}}/>,
+    "Blogs": <BookIcon style = {{fill: selected === 1 ? themeColor : "gray"}}/>
+  }
   const list = () => (
     <div className = {classes.list}>
       <List>
         {['Profile', 'Blogs'].map((text, index) => (
-          <MenuItem button  onClick = {()=> {toggleDrawer(false); setSelect(index)}} key={text} component = {Link} to = { index === 0 ? "/": "/" + text} selected = {selected === index}>
+          <MenuItem button  onClick = {()=> {setSelect(index); toggleDrawer(false);}} key={text} component = {Link} to = { index === 0 ? "/": "/" + text} >
             <ListItemIcon>{iconMap[text]}</ListItemIcon>
-            <ListItemText primary={<Typography style = {{fontWeight:"bold"}}>{text}</Typography>} />
+            <ListItemText primary={<Typography style = {{fontWeight:"bold",  color: selected === index ? themeColor : "gray"  }}>{text}</Typography>}  />
           </MenuItem>
         ))}
       </List>

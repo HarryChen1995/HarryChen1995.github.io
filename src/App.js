@@ -21,7 +21,7 @@ function App() {
     <main >
     <Switch>
       <Route exact path = "/"> <HomePage /> </Route>
-      <Route exact path = "/Blogs"> <h1>Blogs</h1></Route>
+      <Route exact path = "/Blogs"></Route>
     </Switch>
     </main>
     </HashRouter>

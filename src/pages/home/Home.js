@@ -70,7 +70,7 @@ const cardUseStyles = makeStyles({
           <a href = "https://github.com/HarryChen1995" style = {{textDecoration:"none", margin:10}}><GitHub style = {{color:"black", fontSize:30}}/></a>
           <a href = "https://www.linkedin.com/in/hanlin-chen-41663b139/" style = {{textDecoration:"none", margin:10}}><LinkedIn style = {{color:"black", fontSize:33}}/></a>
          </div>
-          <Typography  align = "left" color = "textPrimary" gutterBottom>
+          <Typography  align = "left" variant="h6" color = "textPrimary" gutterBottom>
             Programming Languages
           </Typography>
           <Grid container spacing = {2}>

@@ -112,13 +112,13 @@ const cardUseStyles = makeStyles({
             <Typography>&nbsp; Columbus Ohio</Typography>
            </div>
             </Grid>
-            <Grid item xs = {6}>
+            <Grid item xs = {12} md = {6}>
            <div style = {{display:"flex", justifyContent:"flex-start"}}>
             <EmailIcon/>
             <Typography>&nbsp; harrychen1995@yahoo.com </Typography>
            </div>
           </Grid>
-            <Grid item xs = {6}>
+            <Grid item xs = {12} md = {6}>
             <div style = {{display:"flex", justifyContent:"flex-start"}}>
             <WorkIcon />
             <Typography>&nbsp; InvoiceCloud - Full Time </Typography>

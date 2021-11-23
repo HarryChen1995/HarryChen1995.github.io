@@ -121,7 +121,7 @@ const cardUseStyles = makeStyles({
             <Grid item xs = {12} md = {6}>
             <div style = {{display:"flex", justifyContent:"flex-start"}}>
             <WorkIcon />
-            <Typography>&nbsp; InvoiceCloud - Full Time </Typography>
+            <Typography>&nbsp; JPMorgan Chase & Co.</Typography>
            </div>
             </Grid>
           </Grid>

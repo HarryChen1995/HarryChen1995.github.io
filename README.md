@@ -31,7 +31,7 @@ The GitHub repository section is intentionally resilient to API rate limits: if 
 
 ## Deploy
 
-Pushing to `main` automatically builds the site and deploys the generated `dist/` directory to GitHub Pages using GitHub Actions. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The Vite base path is `/`, appropriate for the `HarryChen1995.github.io` user site.
+Pushing to `main` automatically builds the site and publishes the generated `dist/` directory to the `gh-pages` branch using GitHub Actions. The repository’s Pages source should be set to **Deploy from a branch**, using `gh-pages` and `/(root)`. The Vite base path is `/`, appropriate for the `HarryChen1995.github.io` user site.
 
 To build locally, run `npm run build`; the production site is written to `dist/`.
 
